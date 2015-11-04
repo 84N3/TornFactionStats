@@ -8,7 +8,6 @@
 	
 	//includes
 	require "functions/connectToDatabase.php";
-	require "functions/displaySingleStats.php";
 	require "functions/GoogChart.class.php";
 	
 	// Create chart
