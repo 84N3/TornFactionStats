@@ -1,0 +1,43 @@
+/* Navbar and Logo */
+.header {
+	position:fixed;
+	background-color:#333;
+	top: 0; 
+	left: 0;
+	width: 100%;
+	z-index:1;
+}
+
+.nav li{
+	display:inline;
+}
+
+.nav a:link, a:visited {
+	color:#ccc;
+}
+
+.nav a:hover {
+	color:#fff;
+}
+
+.navItem{
+	float:right;
+	margin-right:30px;
+	text-decoration:none;
+	font-family:Impact, Charcoal, sans-serif;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.title {
+	text-decoration:none;
+	font-family:Impact, Charcoal, sans-serif;
+	font-size:30px;
+	font-weight:bold;
+}
+
+/* Torn City Background */
+body {
+    background-image: url("http://www.torn.com/images/v2/main/bg_regular.jpg?v=1445345836630");
+    background-color: #cccccc;
+} 
