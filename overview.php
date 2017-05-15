@@ -40,10 +40,10 @@
 				<tr><th>PLAYER</th><th>STRENGTH</th><th>SPEED</th><th>DEXTERITY</th><th>DEFENSE</th><th>TOTAL</th><tr>
 				<?php
 				for($i=1;$i<=80;$i++) {
-					$row = mysql_fetch_array($ids, MYSQL_ASSOC);
+					$row = mysqli_fetch_array($ids, MYSQLI_ASSOC);
 					if($row['id']!=NULL) {
 						$stats = execQuery("SELECT * FROM player WHERE id=".$row['id']." AND lastupdate=CURDATE() ORDER BY total ASC;",0);
-						$rowStats = mysql_fetch_array($stats, MYSQL_ASSOC);
+						$rowStats = mysqli_fetch_array($stats, MYSQLI_ASSOC);
 						
 						if($_SESSION["loginID"]!=$rowStats['id']) {
 							echo "<tr align='right'><td align='left'><a href='http://www.torn.com/profiles.php?XID=".$rowStats['id']."' target='_blank'>".$rowStats['name']."</a></td><td>".number_format($rowStats['str'],4)."</td><td>".number_format($rowStats['spd'],4)."</td><td>".number_format($rowStats['dex'],4)."</td><td>".number_format($rowStats['def'],4)."</td><td>".number_format($rowStats['total'],4)."</tr>";

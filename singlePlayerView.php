@@ -57,13 +57,13 @@
 						<?php
 						if($_SESSION["leader"]==1) {
 							for($x=1;$x<80;$x++) {
-								$row = mysql_fetch_array($ids, MYSQL_ASSOC);
+								$row = mysqli_fetch_array($ids, MYSQLI_ASSOC);
 								if($row['id']!=NULL && $row['id']!="") {
 									echo "<option value=".$row['id'].">".$row['name']."</option>";
 								}
 							}
 						} else {
-							$row = mysql_fetch_array($singleID, MYSQL_ASSOC);
+							$row = mysqli_fetch_array($singleID, MYSQLI_ASSOC);
 							if($row['name']!=NULL && $row['name']!="") {
 								echo "<option value=".$_SESSION["loginID"].">".$row['name']."</option>";
 							}
@@ -86,7 +86,7 @@
 									$dex = array();
 									
 									for($i=1;$i<=30;$i++) {
-										$asd = mysql_fetch_array($data, MYSQL_ASSOC);
+										$asd = mysqli_fetch_array($data, MYSQLI_ASSOC);
 										if(isset($asd['id'])) {
 											//echo var_dump($asd)."<br><br>";
 											
@@ -112,10 +112,7 @@
 													$divPrint="100m";
 													break;
 												default:
-													$div=0;
-													break;
-												default:
-													$div=1;
+													$div=1; //Oder 0?
 													break;
 											}
 											
@@ -139,7 +136,7 @@
 		/* ---------- Actuall echos ---------------------------*/
 		
 									$clutter = execQuery("SELECT * FROM player WHERE id=".$_POST['selectionSingle']." AND lastupdate=CURDATE();",1);
-									$clutterRow = mysql_fetch_array($clutter, MYSQL_ASSOC);
+									$clutterRow = mysqli_fetch_array($clutter, MYSQLI_ASSOC);
 		
 									echo "<h1>Battlestats ".$clutterRow['name']."[".$_POST['selectionSingle']."]"."</h1>";
 									

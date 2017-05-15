@@ -45,7 +45,7 @@ if ($_SESSION["valid"] == 0) {
 				for ($x = 1; $x <= 16; $x++) {
 					echo "<tr>";
 					for($i=1;$i<=5;$i++) {
-						$row = mysql_fetch_array($data, MYSQL_ASSOC);
+						$row = mysqli_fetch_array($data, MYSQLI_ASSOC);
 						echo "
 							<td>
 							<b>$row[name]</b><br>  

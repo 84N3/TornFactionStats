@@ -16,8 +16,8 @@ for($x=1;$x<=80;$x++) {
 	$key = $_POST['key'.$x];
 	if ($key!=NULL && $key!="") {
 		
-		$id = mysql_real_escape_string($id);
-		$key = mysql_real_escape_string($key);
+		$id = mysqli_real_escape_string($GLOBALS['con'],$id);
+		$key = mysqli_real_escape_string($GLOBALS['con'],$key);
 		
 		//JSON Verarbeitung
 		$url = "http://api.torn.com/user/".$id."?selections=profile,battlestats&key=".$key;

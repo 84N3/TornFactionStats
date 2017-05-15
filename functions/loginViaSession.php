@@ -6,7 +6,7 @@ session_start();
 error_reporting(E_ALL ^ E_DEPRECATED);
 ini_set('display_errors', TRUE);
 
-// Save login infor
+// Save login info
 $_SESSION["loginID"] = $_POST['loginID'];
 $_SESSION["loginKey"] = $_POST['loginKey'];
 
@@ -18,9 +18,9 @@ $faction = $data['faction'];
 
 
 
-if(($data['server_time']>0) && ($faction['faction_id']==7115)) { //If data checks out -> Valid = true 
+if(($data['server_time']>0) && ($faction['faction_id']==35776)) { //If data checks out -> Valid = true 
 	$_SESSION["valid"] = 1;
-	if(($_SESSION["loginID"] == 28128) || ($_SESSION["loginID"] == 286232) || ($_SESSION["loginID"] == 1781401)) {
+	if(($_SESSION["loginID"] == 1781401) || ($_SESSION["loginID"] == 1980271)) {
 		//If data valid and ID is from a leader
 		$_SESSION["leader"]=1;
 	} else {

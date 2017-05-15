@@ -2,8 +2,8 @@
 session_start();
 
 //Debugging
-error_reporting(E_ALL ^ E_DEPRECATED);
-ini_set('display_errors', TRUE);
+//error_reporting(E_ALL ^ E_DEPRECATED);
+//ini_set('display_errors', TRUE);
 
 if ($_SESSION["valid"] == 0) {
 	//If unlogged tries to access page redirect to login page.
